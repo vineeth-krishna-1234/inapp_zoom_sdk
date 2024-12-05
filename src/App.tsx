@@ -5,30 +5,28 @@ ZoomMtg.preLoadWasm();
 ZoomMtg.prepareWebSDK();
 
 function App() {
-  const authEndpoint = ""; // http://localhost:4000
+  // const authEndpoint = ""; // http://localhost:4000
   const sdkKey = "";
+  const userName = "";
+  const userEmail = "";
+  const leaveUrl =
+    "https://images.unsplash.com/photo-1526614180703-827d23e7c8f2";
+  const zakToken = "";
   const meetingNumber = "";
   const passWord = "";
-  const role = 0;
-  const userName = "React";
-  const userEmail = "";
-  const registrantToken = "";
-  const zakToken = "";
-  const leaveUrl = "http://localhost:5173";
-
   const getSignature = async () => {
     try {
-      const req = await fetch(authEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          meetingNumber: meetingNumber,
-          role: role,
-        }),
-      });
-      const res = await req.json()
-      const signature = res.signature as string;
-      startMeeting(signature)
+      // const req = await fetch(authEndpoint, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     meetingNumber: meetingNumber,
+      //     role: role,
+      //   }),
+      // });
+      // const res = await req.json()
+      // const signature = res.signature as string;
+      startMeeting("");
     } catch (e) {
       console.log(e);
     }
@@ -51,7 +49,6 @@ function App() {
           passWord: passWord,
           userName: userName,
           userEmail: userEmail,
-          tk: registrantToken,
           zak: zakToken,
           success: (success: unknown) => {
             console.log(success);
